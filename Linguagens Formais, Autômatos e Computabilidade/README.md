@@ -8,7 +8,7 @@ Repositório contendo exercícios da disciplina **Linguagens Formais, Autômatos
 
 Este repositório reúne implementações de conceitos fundamentais de **Linguagens Formais, Autômatos e Computabilidade**, abordando tópicos como:
 
-- Expressão Regular em Java.
+- *Expressão Regular em Java.*
 
 # ☕︎ Objetivo
 
@@ -16,8 +16,8 @@ As atividades servem como material de estudo e prática para reforçar os concei
 
 ## ☕︎ Tecnologia e Linguagens Utilizadas
 
-- *Java;*
-- *NetBeans.*
+- Java;
+- NetBeans.
   
 ## ☕︎ Como Usar
 
