@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Cadastro de Gêneros</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel value="Nome do gênero: " for="nome"/>
+            <h:inputText id="nome" value="#{generoBean.genero.nome}" />
+
+            <h:commandButton value="Salvar" action="#{generoBean.salvar}" />
+        </h:form>
+    </h:body>
+</html>

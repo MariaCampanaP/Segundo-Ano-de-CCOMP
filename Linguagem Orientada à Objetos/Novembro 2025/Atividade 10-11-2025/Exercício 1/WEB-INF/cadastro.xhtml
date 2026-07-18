@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                template="template.xhtml">
+    <ui:define name="titulo">Cadastro de Produtos</ui:define>
+    <ui:define name="conteudo">
+        <h:outputLabel value="Cadastro de produto"/>
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:outputLabel for="nome" value="Nome:" />
+                <h:inputText id="nome" value="#{cadastroBean.produto.nome}"/>
+                <h:outputLabel for="categoria" value="Categoria:" />
+                <h:inputText id="categoria" value="#{cadastroBean.produto.categoria}" />
+            </h:panelGrid>
+            <h:commandButton value="Cadastrar" action="#{cadastroBean.cadastrar()}" />
+        </h:form>
+        <h:outputLabel value="#{cadastroBean.mensagem}"/>
+    </ui:define>
+</ui:composition>
+

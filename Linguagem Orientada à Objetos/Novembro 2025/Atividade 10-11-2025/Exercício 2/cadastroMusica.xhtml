@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+    <h:head>
+        <title><ui:insert name="titulo">Sistema de Músicas</ui:insert></title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+            header { background-color: #333; color: white; padding: 10px; text-align: center; }
+            nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+            main { padding: 20px; }
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <h1>Sistema de Músicas</h1>
+            <nav>
+                <h:link value="Início" outcome="inicio"/>
+                <h:link value="Gêneros" outcome="cadastroGenero"/>
+                <h:link value="Músicas" outcome="cadastroMusica"/>
+            </nav>
+        </header>
+
+        <main>
+            <ui:insert name="conteudo"/>
+        </main>
+
+        <footer style="text-align:center; padding:10px; background-color:#eee;">
+            Sistema de Músicas - 2025
+        </footer>
+    </h:body>
+</html>

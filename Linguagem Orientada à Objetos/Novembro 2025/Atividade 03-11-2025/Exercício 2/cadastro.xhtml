@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Usuário</title>
+</h:head>
+    <h:body>
+        <h2>Cadastrar Usuário</h2>
+        
+        <h:form>
+            <h:outputLabel for="login" value="Login: "/>
+            <h:inputText id="login" value="#{cadastroBean.usuario.login}" required="true"/><br/><br/>
+            
+            <h:outputLabel for="senha" value="Senha "/>
+            <h:inputSecret id="senha" value="#{cadastroBean.usuario.senha}" required="true"/><br/><br/>
+            
+            <h:outputLabel for="admin" value="Administrador: "/>
+            <h:selectBooleanCheckbox id="admin" value="#{cadastroBean.usuario.administrador}"/><br/><br/>
+            
+            <h:commandButton value="Cadastrar" action="#{cadastroBean.cadastrar}" />
+        </h:form>
+    </h:body>
+</html>

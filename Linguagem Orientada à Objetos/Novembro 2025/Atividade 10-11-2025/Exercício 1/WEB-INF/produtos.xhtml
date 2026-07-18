@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="template.xhtml">
+    
+    <ui:define name="titulo">Lista de Produtos</ui:define>
+    
+    <ui:define name="conteudo">
+        <h:form>
+            <h:panelGrid columns="4" cellpadding="5">
+                <h:inputText value="#{produtosBean.nomeBusca}">
+                    <f:passThroughAttribute name="placeholder" value="Buscar por nome"/>
+               </h:inputText>
+
+               <h:commandButton value="Buscar" action="#{produtosBean.buscarPorNome()}"/>
+
+                <h:inputText value="#{produtosBean.categoriaBusca}">
+                    <f:passThroughAttribute name="placeholder" value="Buscar por categoria"/>
+                </h:inputText>
+
+                <h:commandButton value="Buscar" action="#{produtosBean.buscarPorCategoria()}"/>
+            </h:panelGrid>
+
+
+            <h:dataTable value="#{produtosBean.produtos}" var="p" border="1">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{p.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    #{p.nome}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Categoria</f:facet>
+                    #{p.categoria}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandButton value="Remover" action="#{produtosBean.removerProduto(p)}"/>
+                </h:column>
+            </h:dataTable>
+
+            <h:commandButton value="Listar todos" action="#{produtosBean.listarProdutos()}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
