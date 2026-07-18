@@ -1,0 +1,140 @@
+Teoria dos Grafos - Trabalho 1° Bimestre 
+Aplicação em python para resolver um sudoku simples utilizando BFS e DFS
+Alunos: Maria Rita Campana Peixoto e Mizael Augusto Soares Oliveira
+
+Descrição do Projeto
+Esta é uma aplicação em Python que resolve puzzles de Sudoku utilizando algoritmos BFS e DFS. O sistema modela o tabuleiro de Sudoku como um grafo onde cada célula é uma vértice conectado às células da mesma linha, coluna e quadrante
+
+Como executar:
+
+Software Necessário
+Visual Studio Code (disponível em: https://code.visualstudio.com/)
+Python 3.6 ou superior (disponível em: https://www.python.org/downloads/)
+
+2. Verificar Instalações
+Abra o Prompt de Comando (Windows) e digite:
+python --version
+
+3. Preparar os Arquivos
+Extraia a pasta ZIP em uma localização de fácil acesso
+Abra o VS Code
+Clique em: File -> Open Folder
+Selecione a pasta extraída do projeto
+
+4. Executar o Programa
+Abre o arquivo main.py
+Clique no botão "Run" no canto superior direito, ou pressione F5
+
+
+Funcionalidades Principais
+-> Carregar tabuleiros de Sudoku de arquivos de texto
+-> Resolver usando Busca em Largura
+-> Resolver usando Busca em Profundidade
+-> Medir tempo de execução dos algoritmos
+-> Validar soluções encontrada
+
+Detalhamento das classes
+
+1. Classe Vértice
+Representa uma célula individual do tabuleiro de Sudoku, modelada como um vértice em um grafo.
+Atributos
+-> num (int): Valor da célula (-1 = vazia, 1-9 = preenchida)
+-> adj (list): Lista de vértices adjacentes (mesma linha/ coluna/ quadrante)
+-> visitados (bool): Flag para controle em algoritmos de busca
+Métodos Principais
+-> add_aresta(vertice): Adiciona conexão com outro vértice
+-> __repr__(): Retorna representação visual ("." para vazio, número para preenchido)
+Responsabilidades
+-> Armazenar valor da célula
+-> Manter relações de adjacência
+-> Controlar estado de visitação
+
+2. Classe TabuleiroSudoku
+Representa o tabuleiro completo do Sudoku como um grafo e implementa os algoritmos de resolução.
+Atributos
+-> ordem (int): Ordem do Sudoku (3 para 9x9 tradicional)
+-> tamanho (int): Dimensão total (ordem × ordem)
+-> tabuleiro (matriz): Grid de objetos Vertice
+Gerenciamento do Tabuleiro
+-> get_numeros(): Retorna matriz apenas com números
+-> set_numeros(numeros): Atualiza todos os valores
+-> gerar_arestas(): Cria conexões entre células relacionadas
+Verificação
+-> checar_resposta(): Valida solução completa
+-> checar_tabuleiro_completo(): Verifica se não há células vazias
+-> checar_adjs(vertice): Verifica conflitos locais
+Algoritmos de Resolução
+-> coloracao_em_largura(max_iteracoes): Implementação BFS
+-> coloracao_em_profundidade(max_iteracoes): Implementação DFS
+Utilitários
+-> get_numeros_validos(i, j): Calcula movimentos possíveis
+-> encontrar_posicao(vertice): Localiza coordenadas no grid
+-> reset_visitados(): Limpa flags de visitação
+Responsabilidades
+-> Modelar o tabuleiro como grafo
+-> Implementar algoritmos de busca
+-> Validar soluções
+-> Gerenciar estado do jogo
+
+3. Classe SolverSudoku
+Fornece implementações alternativas dos algoritmos BFS e DFS com abordagem diferente.
+Atributos
+-> tabuleiro (TabuleiroSudoku): Referência ao tabuleiro a ser resolvido
+Métodos Principais
+-> bfs(max_iteracoes): Busca em Largura com tentativa sistemática
+-> dfs(max_iteracoes): Busca em Profundidade com backtracking limitado
+-> encontrar_posicao(vertice): Localiza coordenadas
+-> limpar_visitados(visitados): Limpa vértices modificados
+
+4. Classe main
+Interface de linha de comando que coordena toda a aplicação e fornece menu interativo.
+Funções Principais
+1. carregar_sudoku(nome_arquivo)
+  Propósito: Carrega tabuleiro de arquivo texto
+  Funcionalidade: Lê CSV, converte para matriz de inteiros
+  Tratamento: Captura erros e retorna None em caso de falha
+  Formato Esperado: Números separados por vírgulas, -1 para vazios
+2. mostrar_sudoku(sudoku)
+  Propósito: Exibição formatada e bonita do tabuleiro
+  Funcionalidade:
+   Adiciona bordas e separadores visuais
+   Mostra "." para células vazias
+   Divisórias entre quadrantes 3x3
+  Saída: Tabuleiro com formato similar ao jogo real
+3. testar_algoritmo(nome, sudoku, max_iteracoes)
+  Propósito: Executar e comparar algoritmos
+  Métricas:
+   Tempo de execução
+   Células vazias iniciais
+   Sucesso/Falha
+   Exibição da solução (se encontrada)
+  Algoritmos: BFS e DFS
+4. main()
+  Propósito: Função principal com loop de menu
+  Fluxo:
+   Carrega todas as instâncias
+   Mostra menu interativo
+   Processa escolhas do usuário
+   Executa testes solicitados
+   Mantém estado entre execuções
+Características do Menu:
+-> Interface limpa e intuitiva
+-> Opções numeradas de 1-4
+-> Validação de entrada
+-> Pausas para visualização de resultados
+-> Mensagens informativas de erro/sucesso
+
+5. Classe utils
+Fornecer funções auxiliares para operações comuns no sistema
+Funções
+carregar_tabuleiro_txt(caminho)
+Funcionalidades
+  Leitura: Abre arquivo em modo leitura
+  Parsing: Divide linhas por vírgulas
+  Conversão: Converte strings para inteiros
+  Estrutura: Retorna matriz bidimensional
+Tratamento
+  Assume formato correto do arquivo
+  Usa strip() para remover espaços
+  split(",") para separar valores
+  map(int, ...) para conversão
