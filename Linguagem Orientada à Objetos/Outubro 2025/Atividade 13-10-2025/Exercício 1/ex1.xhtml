@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-Br">
+
+<head>
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h1>O Último Raio de Algoritmo</h1>
+    <p>Quando o sol da era digital começou a se pôr, restou apenas <i>uma linha de código
+            pulsando</i> na imensidão dos servidores abandonados. Diziam que aquele algoritmo era <i>o
+            último resquício da humanidade</i> - uma tentativa desesperada de registrar <u>sentimentos
+            em linguagem binária</u>. Entre zeros e uns, batia o <strong><i>eco distante de um coração</i></strong> que
+        se
+        recusava a desligar.</p>
+    <p>No silêncio metálico das máquinas adormecidas, <i>uma jovem engenheira encontra esse
+            fragmento perdido</i>. À medida que o decifra, percebe que cada comando guarda <strong><i>lembranças,
+                promessas e sonhos</i></strong>
+        de um mundo que esqueceu o que era sentir. E quando o algoritmo enfim desperta, o céu noturno se ilumina com um
+        último raio - <i>não de luz, mas de memória.</i></p>
+
+    <!-- O <code>: exibe o texto com uma fonte monoespaçada, indicando que é código -->
+    <!-- O <pre>: garante que o texto seja exibido exatamente como foi escrito no código-fonte, 
+        mantendo os espaços e as quebras de linha, o que é útil para mostrar blocos de código mais complexos -->
+    <pre><code>
+        public class UltimoRaioDeAlgoritmo {
+
+        public static void main(String[] args) {
+            SistemaHumanidade sistema = new SistemaHumanidade();
+            sistema.iniciar();
+        }
+    }
+
+    class SistemaHumanidade {
+        private boolean humanidadePerdida = true;
+        private String[] memoria = {
+            "lembrança", 
+            "promessa", 
+            "sonho", 
+            "silêncio"
+        };
+
+        public void iniciar() {
+            System.out.println(">> Iniciando o último raio de algoritmo...");
+            for (String dado : memoria) {
+                processar(dado);
+            }
+            despertar();
+        }
+
+        private void processar(String dado) {
+            System.out.println("Processando " + dado + "...");
+            pausar(1000);
+        }
+
+        private void despertar() {
+            if (humanidadePerdida) {
+                System.out.println("\n// Decifrando emoções esquecidas...");
+                pausar(1500);
+                System.out.println("if (coração.bate()) humanidadePerdida = false;");
+                humanidadePerdida = false;
+            }
+
+            if (!humanidadePerdida) {
+                System.out.println("\n>> O algoritmo despertou.");
+                System.out.println(">> Um último raio — não de luz, mas de memória — atravessa o céu digital.");
+            }
+        }
+
+        private void pausar(int ms) {
+            try {
+                Thread.sleep(ms);
+            } catch (InterruptedException e) {
+                System.err.println("Erro ao tentar sonhar...");
+            }
+        }
+    }
+    </code></pre>
+
+</body>
+
+</html>
