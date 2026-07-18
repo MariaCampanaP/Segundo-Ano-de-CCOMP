@@ -28,6 +28,8 @@ Este repositório reúne implementações de conceitos fundamentais da **Program
 - *Servlets e JSP*
 - *EL e JSTL*
 - *JSF*
+- *Jogo da Vida Primeiro Bimestre*
+- *Jogo da Vida Segundo Bimestre*
 
 ## ☕︎ Objetivo
 
