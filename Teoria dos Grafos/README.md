@@ -20,6 +20,8 @@ Este repositório reúne implementações de conceitos fundamentais de **Teoria 
 - *Algoritmo de Dijkstra*
 - *Algoritmo de Floyd Warshall*
 - *Heurística do Vizinho mais Próximo*
+- *Trabalho Sudoku*
+- *Trabalho Tatu*
 
 # ☕︎ Objetivo
 
